@@ -1,0 +1,60 @@
+{
+  "package": {},
+  "code": {
+    "relevance_score.jinja2": {
+      "type": "llm",
+      "inputs": {
+        "context": {
+          "type": [
+            "string"
+          ]
+        },
+        "question": {
+          "type": [
+            "string"
+          ]
+        },
+        "answer": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "description": "This is a llm tool",
+      "is_builtin": false,
+      "name": "relevance_score.jinja2",
+      "source": "relevance_score.jinja2",
+      "toolId": "relevance_score.jinja2"
+    },
+    "concat_scores.py": {
+      "type": "python",
+      "inputs": {
+        "relevance_score": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "function": "concat_results",
+      "is_builtin": false,
+      "name": "concat_scores.py",
+      "source": "concat_scores.py",
+      "toolId": "concat_scores.py"
+    },
+    "aggregate_variants_results.py": {
+      "type": "python",
+      "inputs": {
+        "results": {
+          "type": [
+            "object"
+          ]
+        }
+      },
+      "function": "aggregate_variants_results",
+      "is_builtin": false,
+      "name": "aggregate_variants_results.py",
+      "source": "aggregate_variants_results.py",
+      "toolId": "aggregate_variants_results.py"
+    }
+  }
+}

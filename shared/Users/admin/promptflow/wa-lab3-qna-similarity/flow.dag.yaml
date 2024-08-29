@@ -1,0 +1,62 @@
+id: QnA_gpt_similarity_eval
+name: QnA GPT Similarity Evaluation
+inputs:
+  question:
+    type: string
+    default: What feeds all the fixtures in low voltage tracks instead of each light
+      having a line-to-low voltage transformer?
+    is_chat_input: false
+  ground_truth:
+    type: string
+    default: The main transformer is the object that feeds all the fixtures in low
+      voltage tracks.
+    is_chat_input: false
+  answer:
+    type: string
+    default: Master transformer.
+    is_chat_input: false
+outputs:
+  gpt_similarity:
+    type: object
+    reference: ${concat_scores.output.gpt_similarity}
+nodes:
+- name: similarity_score
+  type: llm
+  source:
+    type: code
+    path: similarity_score.jinja2
+  inputs:
+    deployment_name: gpt-4
+    temperature: 0
+    top_p: 1
+    max_tokens: 1000
+    response_format:
+      type: text
+    question: ${inputs.question}
+    answer: ${inputs.answer}
+    ground_truth: ${inputs.ground_truth}
+  provider: AzureOpenAI
+  connection: aoai-connection
+  api: chat
+  module: promptflow.tools.aoai
+  use_variants: false
+- name: concat_scores
+  type: python
+  source:
+    type: code
+    path: concat_scores.py
+  inputs:
+    similarity_score: ${similarity_score.output}
+  use_variants: false
+- name: aggregate_variants_results
+  type: python
+  source:
+    type: code
+    path: aggregate_variants_results.py
+  inputs:
+    results: ${concat_scores.output}
+  aggregation: true
+  use_variants: false
+node_variants: {}
+environment:
+  python_requirements_txt: requirements.txt

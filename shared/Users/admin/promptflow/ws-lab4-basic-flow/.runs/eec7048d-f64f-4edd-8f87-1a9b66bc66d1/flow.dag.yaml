@@ -1,0 +1,67 @@
+id: template_standard_flow
+name: Template Standard Flow
+inputs:
+  topic:
+    type: string
+    is_chat_input: false
+outputs:
+  joke:
+    type: string
+    reference: ${echo.output}
+nodes:
+- name: echo
+  type: python
+  source:
+    type: code
+    path: echo.py
+  inputs:
+    input: ${joke.output}
+  use_variants: false
+- name: joke
+  type: llm
+  source:
+    type: code
+    path: joke.jinja2
+  inputs:
+    deployment_name: gpt-4
+    temperature: 1
+    top_p: 1
+    max_tokens: 256
+    response_format:
+      type: json_object
+    topic: ${inputs.topic}
+  provider: AzureOpenAI
+  connection: aoai-connection
+  api: chat
+  module: promptflow.tools.aoai
+  activate:
+    when: ${contentOutput.output}
+    is: true
+  use_variants: false
+- name: safety
+  type: python
+  source:
+    type: package
+    tool: promptflow.tools.azure_content_safety.analyze_text
+  inputs:
+    connection: csllmopsworkshopdev
+    hate_category: medium_sensitivity
+    self_harm_category: medium_sensitivity
+    sexual_category: medium_sensitivity
+    text: ${inputs.topic}
+    violence_category: medium_sensitivity
+  use_variants: false
+- name: contentOutput
+  type: python
+  source:
+    type: code
+    path: contentOutput.py
+  inputs:
+    input1: ${safety.output}
+  activate:
+    when: ${safety.output.suggested_action}
+    is: '"Accept"'
+  use_variants: false
+node_variants: {}
+environment:
+  python_requirements_txt: requirements.txt

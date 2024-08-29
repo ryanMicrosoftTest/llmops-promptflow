@@ -1,0 +1,49 @@
+{
+  "orientation": "Vertical",
+  "nodeLayouts": {
+    "inputs": {
+      "x": 67,
+      "y": 62,
+      "index": -1
+    },
+    "outputs": {
+      "x": 74,
+      "y": 700,
+      "index": -1
+    },
+    "echo": {
+      "x": 140,
+      "y": 585,
+      "height": 75,
+      "index": 0
+    },
+    "joke": {
+      "x": -41,
+      "y": 415,
+      "height": 75,
+      "index": 1
+    },
+    "suggestedAction": {
+      "x": 189,
+      "y": 287,
+      "height": 75,
+      "index": 3
+    },
+    "safety": {
+      "x": 124,
+      "y": 171,
+      "height": 75,
+      "index": 2
+    }
+  },
+  "viewport": {
+    "transformMatrix": [
+      1,
+      0,
+      0,
+      1,
+      148.3125,
+      201.5
+    ]
+  }
+}
