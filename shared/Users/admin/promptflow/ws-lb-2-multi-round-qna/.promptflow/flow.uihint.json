@@ -28,7 +28,7 @@
         },
         "inputsValue": {
           "index_type": "Azure AI Search",
-          "acs_index_connection": "rag-search"
+          "acs_index_connection": "wsaisearchtest"
         }
       }
     },

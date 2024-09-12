@@ -1,0 +1,717 @@
+{
+  "flow_runs": [
+    {
+      "run_id": "7336b104-32cb-40a6-bd1a-370cceb000b9_0",
+      "status": "Completed",
+      "error": null,
+      "inputs": {
+        "topic": "Sundays"
+      },
+      "output": {
+        "joke": "Why did the scarecrow become a motivational speaker on Sundays?\n\nBecause he was outstanding in his field all week and needed a day to inspire others!"
+      },
+      "metrics": null,
+      "request": null,
+      "parent_run_id": "7336b104-32cb-40a6-bd1a-370cceb000b9",
+      "root_run_id": "7336b104-32cb-40a6-bd1a-370cceb000b9",
+      "source_run_id": null,
+      "flow_id": "template_standard_flow",
+      "start_time": "2024-09-11T22:58:24.368167Z",
+      "end_time": "2024-09-11T22:58:25.500767Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "flow",
+          "node_name": "flow",
+          "type": "Flow",
+          "start_time": 1726109904.368167,
+          "end_time": 1726109905.500767,
+          "children": [
+            {
+              "name": "analyze_text",
+              "type": "Function",
+              "inputs": {
+                "connection": "csllmopsworkshopdev",
+                "hate_category": "medium_sensitivity",
+                "self_harm_category": "medium_sensitivity",
+                "sexual_category": "medium_sensitivity",
+                "text": "Sundays",
+                "violence_category": "medium_sensitivity"
+              },
+              "output": {
+                "suggested_action": "Accept",
+                "action_by_category": {
+                  "Hate": "Accept",
+                  "SelfHarm": "Accept",
+                  "Sexual": "Accept",
+                  "Violence": "Accept"
+                }
+              },
+              "start_time": 1726109904.374172,
+              "end_time": 1726109904.811114,
+              "error": null,
+              "children": [
+                {
+                  "name": "AzureContentSafety.analyze_text",
+                  "type": "Function",
+                  "inputs": {
+                    "text": "Sundays",
+                    "hate_category": "medium_sensitivity",
+                    "sexual_category": "medium_sensitivity",
+                    "self_harm_category": "medium_sensitivity",
+                    "violence_category": "medium_sensitivity"
+                  },
+                  "output": {
+                    "suggested_action": "Accept",
+                    "action_by_category": {
+                      "Hate": "Accept",
+                      "SelfHarm": "Accept",
+                      "Sexual": "Accept",
+                      "Violence": "Accept"
+                    }
+                  },
+                  "start_time": 1726109904.375171,
+                  "end_time": 1726109904.811114,
+                  "error": null,
+                  "children": [],
+                  "node_name": null,
+                  "parent_id": "e27442b2-ce07-460c-a341-62ee7a1f3cae",
+                  "id": "48a97be5-9e2c-414f-b6d7-58b0d7336913",
+                  "function": "AzureContentSafety.analyze_text",
+                  "system_metrics": {}
+                }
+              ],
+              "node_name": "safety",
+              "parent_id": "",
+              "id": "e27442b2-ce07-460c-a341-62ee7a1f3cae",
+              "function": "analyze_text",
+              "system_metrics": {}
+            },
+            {
+              "name": "proceed_with_joke",
+              "type": "Function",
+              "inputs": {
+                "input1": {
+                  "suggested_action": "Accept",
+                  "action_by_category": {
+                    "Hate": "Accept",
+                    "SelfHarm": "Accept",
+                    "Sexual": "Accept",
+                    "Violence": "Accept"
+                  }
+                }
+              },
+              "output": "Accept",
+              "start_time": 1726109904.813112,
+              "end_time": 1726109904.814111,
+              "error": null,
+              "children": [],
+              "node_name": "suggestedAction",
+              "parent_id": "",
+              "id": "323925ab-76bd-4b96-a69e-55cb9551c17d",
+              "function": "proceed_with_joke",
+              "system_metrics": {}
+            },
+            {
+              "name": "AzureOpenAI.chat",
+              "type": "Function",
+              "inputs": {
+                "prompt": "{# Prompt is a jinja2 template that generates prompt for LLM #}\n\n# system:\n\nYou are a bot can tell good jokes\n\n# user:\n\nA joke about {{topic}} please\n",
+                "deployment_name": "gpt-4",
+                "temperature": 1.0,
+                "top_p": 1.0,
+                "max_tokens": 256,
+                "response_format": {
+                  "type": "text"
+                },
+                "topic": "Sundays",
+                "_inputs_to_escape": [
+                  "topic"
+                ]
+              },
+              "output": "Why did the scarecrow become a motivational speaker on Sundays?\n\nBecause he was outstanding in his field all week and needed a day to inspire others!",
+              "start_time": 1726109904.816113,
+              "end_time": 1726109905.497242,
+              "error": null,
+              "children": [
+                {
+                  "name": "openai_chat",
+                  "type": "LLM",
+                  "inputs": {
+                    "model": "gpt-4",
+                    "messages": [
+                      {
+                        "role": "system",
+                        "content": "You are a bot can tell good jokes"
+                      },
+                      {
+                        "role": "user",
+                        "content": "A joke about Sundays please"
+                      }
+                    ],
+                    "temperature": 1.0,
+                    "top_p": 1.0,
+                    "n": 1,
+                    "stream": false,
+                    "presence_penalty": 0.0,
+                    "frequency_penalty": 0.0,
+                    "user": "",
+                    "max_tokens": 256,
+                    "response_format": {
+                      "type": "text"
+                    }
+                  },
+                  "output": {
+                    "id": "chatcmpl-A6Qa26uBJ4ELvr9k0W2HieHMJr6Uq",
+                    "choices": [
+                      {
+                        "finish_reason": "stop",
+                        "index": 0,
+                        "logprobs": null,
+                        "message": {
+                          "content": "Why did the scarecrow become a motivational speaker on Sundays?\n\nBecause he was outstanding in his field all week and needed a day to inspire others!",
+                          "role": "assistant",
+                          "function_call": null,
+                          "tool_calls": null
+                        },
+                        "content_filter_results": {
+                          "hate": {
+                            "filtered": false,
+                            "severity": "safe"
+                          },
+                          "self_harm": {
+                            "filtered": false,
+                            "severity": "safe"
+                          },
+                          "sexual": {
+                            "filtered": false,
+                            "severity": "safe"
+                          },
+                          "violence": {
+                            "filtered": false,
+                            "severity": "safe"
+                          }
+                        }
+                      }
+                    ],
+                    "created": 1726095506,
+                    "model": "gpt-4o-2024-05-13",
+                    "object": "chat.completion",
+                    "service_tier": null,
+                    "system_fingerprint": "fp_80a1bad4c7",
+                    "usage": {
+                      "completion_tokens": 29,
+                      "prompt_tokens": 24,
+                      "total_tokens": 53
+                    },
+                    "prompt_filter_results": [
+                      {
+                        "prompt_index": 0,
+                        "content_filter_results": {
+                          "hate": {
+                            "filtered": false,
+                            "severity": "safe"
+                          },
+                          "jailbreak": {
+                            "filtered": false,
+                            "detected": false
+                          },
+                          "self_harm": {
+                            "filtered": false,
+                            "severity": "safe"
+                          },
+                          "sexual": {
+                            "filtered": false,
+                            "severity": "safe"
+                          },
+                          "violence": {
+                            "filtered": false,
+                            "severity": "safe"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "start_time": 1726109904.820113,
+                  "end_time": 1726109905.496243,
+                  "error": null,
+                  "children": [],
+                  "node_name": null,
+                  "parent_id": "6de024de-e220-468b-b587-7280d03416d4",
+                  "id": "409bd603-ff6e-409f-99fc-01f2b017b4f8",
+                  "function": "openai.resources.chat.completions.Completions.create",
+                  "system_metrics": {
+                    "completion_tokens": 29,
+                    "prompt_tokens": 24,
+                    "total_tokens": 53
+                  }
+                }
+              ],
+              "node_name": "joke",
+              "parent_id": "",
+              "id": "6de024de-e220-468b-b587-7280d03416d4",
+              "function": "AzureOpenAI.chat",
+              "system_metrics": {
+                "completion_tokens": 29,
+                "prompt_tokens": 24,
+                "total_tokens": 53
+              }
+            },
+            {
+              "name": "echo",
+              "type": "Function",
+              "inputs": {
+                "input": "Why did the scarecrow become a motivational speaker on Sundays?\n\nBecause he was outstanding in his field all week and needed a day to inspire others!"
+              },
+              "output": "Why did the scarecrow become a motivational speaker on Sundays?\n\nBecause he was outstanding in his field all week and needed a day to inspire others!",
+              "start_time": 1726109905.499757,
+              "end_time": 1726109905.499757,
+              "error": null,
+              "children": [],
+              "node_name": "echo",
+              "parent_id": "",
+              "id": "a737f692-627c-428b-b75f-97cd307b62e8",
+              "function": "echo",
+              "system_metrics": {}
+            }
+          ],
+          "system_metrics": {
+            "duration": 1.1326,
+            "prompt_tokens": 24,
+            "completion_tokens": 29,
+            "total_tokens": 53
+          },
+          "inputs": {
+            "topic": "Sundays"
+          },
+          "output": {
+            "joke": "Why did the scarecrow become a motivational speaker on Sundays?\n\nBecause he was outstanding in his field all week and needed a day to inspire others!"
+          },
+          "error": null
+        }
+      ],
+      "name": "",
+      "description": "",
+      "tags": null,
+      "system_metrics": {
+        "duration": 1.1326,
+        "prompt_tokens": 24,
+        "completion_tokens": 29,
+        "total_tokens": 53
+      },
+      "result": {
+        "joke": "Why did the scarecrow become a motivational speaker on Sundays?\n\nBecause he was outstanding in his field all week and needed a day to inspire others!"
+      },
+      "upload_metrics": false,
+      "otel_trace_id": "0x43997a5a72a6ca3763127e387d8071d4",
+      "message_format": "basic"
+    }
+  ],
+  "node_runs": [
+    {
+      "node": "safety",
+      "flow_run_id": "7336b104-32cb-40a6-bd1a-370cceb000b9",
+      "run_id": "7336b104-32cb-40a6-bd1a-370cceb000b9_safety_0",
+      "status": "Completed",
+      "inputs": {
+        "connection": "csllmopsworkshopdev",
+        "hate_category": "medium_sensitivity",
+        "self_harm_category": "medium_sensitivity",
+        "sexual_category": "medium_sensitivity",
+        "text": "Sundays",
+        "violence_category": "medium_sensitivity"
+      },
+      "output": {
+        "suggested_action": "Accept",
+        "action_by_category": {
+          "Hate": "Accept",
+          "SelfHarm": "Accept",
+          "Sexual": "Accept",
+          "Violence": "Accept"
+        }
+      },
+      "metrics": null,
+      "error": null,
+      "parent_run_id": "7336b104-32cb-40a6-bd1a-370cceb000b9_0",
+      "start_time": "2024-09-11T22:58:24.373166Z",
+      "end_time": "2024-09-11T22:58:24.812128Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "analyze_text",
+          "type": "Function",
+          "inputs": {
+            "connection": "csllmopsworkshopdev",
+            "hate_category": "medium_sensitivity",
+            "self_harm_category": "medium_sensitivity",
+            "sexual_category": "medium_sensitivity",
+            "text": "Sundays",
+            "violence_category": "medium_sensitivity"
+          },
+          "output": {
+            "suggested_action": "Accept",
+            "action_by_category": {
+              "Hate": "Accept",
+              "SelfHarm": "Accept",
+              "Sexual": "Accept",
+              "Violence": "Accept"
+            }
+          },
+          "start_time": 1726109904.374172,
+          "end_time": 1726109904.811114,
+          "error": null,
+          "children": [
+            {
+              "name": "AzureContentSafety.analyze_text",
+              "type": "Function",
+              "inputs": {
+                "text": "Sundays",
+                "hate_category": "medium_sensitivity",
+                "sexual_category": "medium_sensitivity",
+                "self_harm_category": "medium_sensitivity",
+                "violence_category": "medium_sensitivity"
+              },
+              "output": {
+                "suggested_action": "Accept",
+                "action_by_category": {
+                  "Hate": "Accept",
+                  "SelfHarm": "Accept",
+                  "Sexual": "Accept",
+                  "Violence": "Accept"
+                }
+              },
+              "start_time": 1726109904.375171,
+              "end_time": 1726109904.811114,
+              "error": null,
+              "children": [],
+              "node_name": null,
+              "parent_id": "e27442b2-ce07-460c-a341-62ee7a1f3cae",
+              "id": "48a97be5-9e2c-414f-b6d7-58b0d7336913",
+              "function": "AzureContentSafety.analyze_text",
+              "system_metrics": {}
+            }
+          ],
+          "node_name": "safety",
+          "parent_id": "",
+          "id": "e27442b2-ce07-460c-a341-62ee7a1f3cae",
+          "function": "analyze_text",
+          "system_metrics": {}
+        }
+      ],
+      "cached_run_id": null,
+      "cached_flow_run_id": null,
+      "logs": {
+        "stdout": "[2024-09-11T22:58:24+0000] status code: 200\n[2024-09-11T22:58:24+0000] response txt: {\"blocklistsMatch\":[],\"categoriesAnalysis\":[{\"category\":\"Hate\",\"severity\":0},{\"category\":\"SelfHarm\",\"severity\":0},{\"category\":\"Sexual\",\"severity\":0},{\"category\":\"Violence\",\"severity\":0}]}\n[2024-09-11T22:58:24+0000] Action result: {<Category.Hate: 1>: <Action.Accept: 'Accept'>, <Category.SelfHarm: 2>: <Action.Accept: 'Accept'>, <Category.Sexual: 3>: <Action.Accept: 'Accept'>, <Category.Violence: 4>: <Action.Accept: 'Accept'>}\n",
+        "stderr": ""
+      },
+      "system_metrics": {
+        "duration": 0.438962
+      },
+      "result": {
+        "suggested_action": "Accept",
+        "action_by_category": {
+          "Hate": "Accept",
+          "SelfHarm": "Accept",
+          "Sexual": "Accept",
+          "Violence": "Accept"
+        }
+      },
+      "message_format": "basic"
+    },
+    {
+      "node": "suggestedAction",
+      "flow_run_id": "7336b104-32cb-40a6-bd1a-370cceb000b9",
+      "run_id": "7336b104-32cb-40a6-bd1a-370cceb000b9_suggestedAction_0",
+      "status": "Completed",
+      "inputs": {
+        "input1": {
+          "suggested_action": "Accept",
+          "action_by_category": {
+            "Hate": "Accept",
+            "SelfHarm": "Accept",
+            "Sexual": "Accept",
+            "Violence": "Accept"
+          }
+        }
+      },
+      "output": "Accept",
+      "metrics": null,
+      "error": null,
+      "parent_run_id": "7336b104-32cb-40a6-bd1a-370cceb000b9_0",
+      "start_time": "2024-09-11T22:58:24.813112Z",
+      "end_time": "2024-09-11T22:58:24.814111Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "proceed_with_joke",
+          "type": "Function",
+          "inputs": {
+            "input1": {
+              "suggested_action": "Accept",
+              "action_by_category": {
+                "Hate": "Accept",
+                "SelfHarm": "Accept",
+                "Sexual": "Accept",
+                "Violence": "Accept"
+              }
+            }
+          },
+          "output": "Accept",
+          "start_time": 1726109904.813112,
+          "end_time": 1726109904.814111,
+          "error": null,
+          "children": [],
+          "node_name": "suggestedAction",
+          "parent_id": "",
+          "id": "323925ab-76bd-4b96-a69e-55cb9551c17d",
+          "function": "proceed_with_joke",
+          "system_metrics": {}
+        }
+      ],
+      "cached_run_id": null,
+      "cached_flow_run_id": null,
+      "logs": {
+        "stdout": "",
+        "stderr": ""
+      },
+      "system_metrics": {
+        "duration": 0.000999
+      },
+      "result": "Accept",
+      "message_format": "basic"
+    },
+    {
+      "node": "joke",
+      "flow_run_id": "7336b104-32cb-40a6-bd1a-370cceb000b9",
+      "run_id": "7336b104-32cb-40a6-bd1a-370cceb000b9_joke_0",
+      "status": "Completed",
+      "inputs": {
+        "deployment_name": "gpt-4",
+        "temperature": 1.0,
+        "top_p": 1.0,
+        "max_tokens": 256,
+        "response_format": {
+          "type": "text"
+        },
+        "topic": "Sundays",
+        "_inputs_to_escape": [
+          "topic"
+        ]
+      },
+      "output": "Why did the scarecrow become a motivational speaker on Sundays?\n\nBecause he was outstanding in his field all week and needed a day to inspire others!",
+      "metrics": null,
+      "error": null,
+      "parent_run_id": "7336b104-32cb-40a6-bd1a-370cceb000b9_0",
+      "start_time": "2024-09-11T22:58:24.815111Z",
+      "end_time": "2024-09-11T22:58:25.498242Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "AzureOpenAI.chat",
+          "type": "Function",
+          "inputs": {
+            "prompt": "{# Prompt is a jinja2 template that generates prompt for LLM #}\n\n# system:\n\nYou are a bot can tell good jokes\n\n# user:\n\nA joke about {{topic}} please\n",
+            "deployment_name": "gpt-4",
+            "temperature": 1.0,
+            "top_p": 1.0,
+            "max_tokens": 256,
+            "response_format": {
+              "type": "text"
+            },
+            "topic": "Sundays",
+            "_inputs_to_escape": [
+              "topic"
+            ]
+          },
+          "output": "Why did the scarecrow become a motivational speaker on Sundays?\n\nBecause he was outstanding in his field all week and needed a day to inspire others!",
+          "start_time": 1726109904.816113,
+          "end_time": 1726109905.497242,
+          "error": null,
+          "children": [
+            {
+              "name": "openai_chat",
+              "type": "LLM",
+              "inputs": {
+                "model": "gpt-4",
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "You are a bot can tell good jokes"
+                  },
+                  {
+                    "role": "user",
+                    "content": "A joke about Sundays please"
+                  }
+                ],
+                "temperature": 1.0,
+                "top_p": 1.0,
+                "n": 1,
+                "stream": false,
+                "presence_penalty": 0.0,
+                "frequency_penalty": 0.0,
+                "user": "",
+                "max_tokens": 256,
+                "response_format": {
+                  "type": "text"
+                }
+              },
+              "output": {
+                "id": "chatcmpl-A6Qa26uBJ4ELvr9k0W2HieHMJr6Uq",
+                "choices": [
+                  {
+                    "finish_reason": "stop",
+                    "index": 0,
+                    "logprobs": null,
+                    "message": {
+                      "content": "Why did the scarecrow become a motivational speaker on Sundays?\n\nBecause he was outstanding in his field all week and needed a day to inspire others!",
+                      "role": "assistant",
+                      "function_call": null,
+                      "tool_calls": null
+                    },
+                    "content_filter_results": {
+                      "hate": {
+                        "filtered": false,
+                        "severity": "safe"
+                      },
+                      "self_harm": {
+                        "filtered": false,
+                        "severity": "safe"
+                      },
+                      "sexual": {
+                        "filtered": false,
+                        "severity": "safe"
+                      },
+                      "violence": {
+                        "filtered": false,
+                        "severity": "safe"
+                      }
+                    }
+                  }
+                ],
+                "created": 1726095506,
+                "model": "gpt-4o-2024-05-13",
+                "object": "chat.completion",
+                "service_tier": null,
+                "system_fingerprint": "fp_80a1bad4c7",
+                "usage": {
+                  "completion_tokens": 29,
+                  "prompt_tokens": 24,
+                  "total_tokens": 53
+                },
+                "prompt_filter_results": [
+                  {
+                    "prompt_index": 0,
+                    "content_filter_results": {
+                      "hate": {
+                        "filtered": false,
+                        "severity": "safe"
+                      },
+                      "jailbreak": {
+                        "filtered": false,
+                        "detected": false
+                      },
+                      "self_harm": {
+                        "filtered": false,
+                        "severity": "safe"
+                      },
+                      "sexual": {
+                        "filtered": false,
+                        "severity": "safe"
+                      },
+                      "violence": {
+                        "filtered": false,
+                        "severity": "safe"
+                      }
+                    }
+                  }
+                ]
+              },
+              "start_time": 1726109904.820113,
+              "end_time": 1726109905.496243,
+              "error": null,
+              "children": [],
+              "node_name": null,
+              "parent_id": "6de024de-e220-468b-b587-7280d03416d4",
+              "id": "409bd603-ff6e-409f-99fc-01f2b017b4f8",
+              "function": "openai.resources.chat.completions.Completions.create",
+              "system_metrics": {
+                "completion_tokens": 29,
+                "prompt_tokens": 24,
+                "total_tokens": 53
+              }
+            }
+          ],
+          "node_name": "joke",
+          "parent_id": "",
+          "id": "6de024de-e220-468b-b587-7280d03416d4",
+          "function": "AzureOpenAI.chat",
+          "system_metrics": {
+            "completion_tokens": 29,
+            "prompt_tokens": 24,
+            "total_tokens": 53
+          }
+        }
+      ],
+      "cached_run_id": null,
+      "cached_flow_run_id": null,
+      "logs": {
+        "stdout": "",
+        "stderr": ""
+      },
+      "system_metrics": {
+        "completion_tokens": 29,
+        "prompt_tokens": 24,
+        "total_tokens": 53,
+        "duration": 0.683131
+      },
+      "result": "Why did the scarecrow become a motivational speaker on Sundays?\n\nBecause he was outstanding in his field all week and needed a day to inspire others!",
+      "message_format": "basic"
+    },
+    {
+      "node": "echo",
+      "flow_run_id": "7336b104-32cb-40a6-bd1a-370cceb000b9",
+      "run_id": "7336b104-32cb-40a6-bd1a-370cceb000b9_echo_0",
+      "status": "Completed",
+      "inputs": {
+        "input": "Why did the scarecrow become a motivational speaker on Sundays?\n\nBecause he was outstanding in his field all week and needed a day to inspire others!"
+      },
+      "output": "Why did the scarecrow become a motivational speaker on Sundays?\n\nBecause he was outstanding in his field all week and needed a day to inspire others!",
+      "metrics": null,
+      "error": null,
+      "parent_run_id": "7336b104-32cb-40a6-bd1a-370cceb000b9_0",
+      "start_time": "2024-09-11T22:58:25.499757Z",
+      "end_time": "2024-09-11T22:58:25.500767Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "echo",
+          "type": "Function",
+          "inputs": {
+            "input": "Why did the scarecrow become a motivational speaker on Sundays?\n\nBecause he was outstanding in his field all week and needed a day to inspire others!"
+          },
+          "output": "Why did the scarecrow become a motivational speaker on Sundays?\n\nBecause he was outstanding in his field all week and needed a day to inspire others!",
+          "start_time": 1726109905.499757,
+          "end_time": 1726109905.499757,
+          "error": null,
+          "children": [],
+          "node_name": "echo",
+          "parent_id": "",
+          "id": "a737f692-627c-428b-b75f-97cd307b62e8",
+          "function": "echo",
+          "system_metrics": {}
+        }
+      ],
+      "cached_run_id": null,
+      "cached_flow_run_id": null,
+      "logs": {
+        "stdout": "",
+        "stderr": ""
+      },
+      "system_metrics": {
+        "duration": 0.00101
+      },
+      "result": "Why did the scarecrow become a motivational speaker on Sundays?\n\nBecause he was outstanding in his field all week and needed a day to inspire others!",
+      "message_format": "basic"
+    }
+  ]
+}

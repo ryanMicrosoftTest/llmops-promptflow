@@ -1,5 +1,7 @@
 id: bring_your_own_data_chat_qna
 name: Bring Your Own Data Chat QnA
+environment:
+  python_requirements_txt: requirements.txt
 inputs:
   chat_history:
     type: list
@@ -103,7 +105,6 @@ node_variants:
     variants:
       variant_0:
         node:
-          name: Prompt_variants
           type: prompt
           source:
             type: code
@@ -114,7 +115,6 @@ node_variants:
             chat_input: ${inputs.chat_input}
       variant_1:
         node:
-          name: Prompt_variants
           type: prompt
           source:
             type: code
@@ -125,7 +125,6 @@ node_variants:
             chat_input: ${inputs.chat_input}
       variant_2:
         node:
-          name: Prompt_variants
           type: prompt
           source:
             type: code
@@ -134,5 +133,3 @@ node_variants:
             contexts: ${generate_prompt_context.output}
             chat_history: ${inputs.chat_history}
             chat_input: ${inputs.chat_input}
-environment:
-  python_requirements_txt: requirements.txt

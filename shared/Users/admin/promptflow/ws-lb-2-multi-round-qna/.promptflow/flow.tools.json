@@ -663,9 +663,7 @@
           ]
         }
       },
-      "source": "Prompt_variants.jinja2",
-      "name": "Prompt_variants.jinja2",
-      "toolId": "Prompt_variants.jinja2"
+      "source": "Prompt_variants.jinja2"
     },
     "Prompt_variants__variant_1.jinja2": {
       "type": "prompt",
@@ -686,9 +684,7 @@
           ]
         }
       },
-      "source": "Prompt_variants__variant_1.jinja2",
-      "name": "Prompt_variants__variant_1.jinja2",
-      "toolId": "Prompt_variants__variant_1.jinja2"
+      "source": "Prompt_variants__variant_1.jinja2"
     },
     "Prompt_variants__variant_2.jinja2": {
       "type": "prompt",
@@ -709,9 +705,7 @@
           ]
         }
       },
-      "source": "Prompt_variants__variant_2.jinja2",
-      "name": "Prompt_variants__variant_2.jinja2",
-      "toolId": "Prompt_variants__variant_2.jinja2"
+      "source": "Prompt_variants__variant_2.jinja2"
     },
     "chat_with_context.jinja2": {
       "type": "llm",
@@ -722,9 +716,7 @@
           ]
         }
       },
-      "source": "chat_with_context.jinja2",
-      "name": "chat_with_context.jinja2",
-      "toolId": "chat_with_context.jinja2"
+      "source": "chat_with_context.jinja2"
     },
     "modify_query_with_history.jinja2": {
       "type": "llm",
@@ -740,9 +732,7 @@
           ]
         }
       },
-      "source": "modify_query_with_history.jinja2",
-      "name": "modify_query_with_history.jinja2",
-      "toolId": "modify_query_with_history.jinja2"
+      "source": "modify_query_with_history.jinja2"
     }
   }
 }
