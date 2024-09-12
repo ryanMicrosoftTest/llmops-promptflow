@@ -1,31 +1,31 @@
 {
   "flow_runs": [
     {
-      "run_id": "7336b104-32cb-40a6-bd1a-370cceb000b9_0",
+      "run_id": "218c86fc-03d3-4893-bf6f-2399744b2ce0_0",
       "status": "Completed",
       "error": null,
       "inputs": {
-        "topic": "Sundays"
+        "topic": "Books"
       },
       "output": {
-        "joke": "Why did the scarecrow become a motivational speaker on Sundays?\n\nBecause he was outstanding in his field all week and needed a day to inspire others!"
+        "joke": "Sure, here's one for you:\n\nWhy did the scarecrow become a successful book reviewer?\n\nBecause he was outstanding in his field and knew how to pick out the good cornstories!"
       },
       "metrics": null,
       "request": null,
-      "parent_run_id": "7336b104-32cb-40a6-bd1a-370cceb000b9",
-      "root_run_id": "7336b104-32cb-40a6-bd1a-370cceb000b9",
+      "parent_run_id": "218c86fc-03d3-4893-bf6f-2399744b2ce0",
+      "root_run_id": "218c86fc-03d3-4893-bf6f-2399744b2ce0",
       "source_run_id": null,
       "flow_id": "template_standard_flow",
-      "start_time": "2024-09-11T22:58:24.368167Z",
-      "end_time": "2024-09-11T22:58:25.500767Z",
+      "start_time": "2024-09-12T16:57:48.263988Z",
+      "end_time": "2024-09-12T16:57:49.449366Z",
       "index": 0,
       "api_calls": [
         {
           "name": "flow",
           "node_name": "flow",
           "type": "Flow",
-          "start_time": 1726109904.368167,
-          "end_time": 1726109905.500767,
+          "start_time": 1726174668.263988,
+          "end_time": 1726174669.449366,
           "children": [
             {
               "name": "analyze_text",
@@ -35,7 +35,7 @@
                 "hate_category": "medium_sensitivity",
                 "self_harm_category": "medium_sensitivity",
                 "sexual_category": "medium_sensitivity",
-                "text": "Sundays",
+                "text": "Books",
                 "violence_category": "medium_sensitivity"
               },
               "output": {
@@ -47,15 +47,15 @@
                   "Violence": "Accept"
                 }
               },
-              "start_time": 1726109904.374172,
-              "end_time": 1726109904.811114,
+              "start_time": 1726174668.266987,
+              "end_time": 1726174668.531573,
               "error": null,
               "children": [
                 {
                   "name": "AzureContentSafety.analyze_text",
                   "type": "Function",
                   "inputs": {
-                    "text": "Sundays",
+                    "text": "Books",
                     "hate_category": "medium_sensitivity",
                     "sexual_category": "medium_sensitivity",
                     "self_harm_category": "medium_sensitivity",
@@ -70,20 +70,20 @@
                       "Violence": "Accept"
                     }
                   },
-                  "start_time": 1726109904.375171,
-                  "end_time": 1726109904.811114,
+                  "start_time": 1726174668.266987,
+                  "end_time": 1726174668.530542,
                   "error": null,
                   "children": [],
                   "node_name": null,
-                  "parent_id": "e27442b2-ce07-460c-a341-62ee7a1f3cae",
-                  "id": "48a97be5-9e2c-414f-b6d7-58b0d7336913",
+                  "parent_id": "364314d5-1d03-40f1-91de-12fe288c867d",
+                  "id": "01954f31-6205-48d3-98f9-2097ac6df956",
                   "function": "AzureContentSafety.analyze_text",
                   "system_metrics": {}
                 }
               ],
               "node_name": "safety",
               "parent_id": "",
-              "id": "e27442b2-ce07-460c-a341-62ee7a1f3cae",
+              "id": "364314d5-1d03-40f1-91de-12fe288c867d",
               "function": "analyze_text",
               "system_metrics": {}
             },
@@ -102,13 +102,13 @@
                 }
               },
               "output": "Accept",
-              "start_time": 1726109904.813112,
-              "end_time": 1726109904.814111,
+              "start_time": 1726174668.535074,
+              "end_time": 1726174668.536091,
               "error": null,
               "children": [],
               "node_name": "suggestedAction",
               "parent_id": "",
-              "id": "323925ab-76bd-4b96-a69e-55cb9551c17d",
+              "id": "7d5b5e4a-2acd-43bf-9a67-e884d89e2a18",
               "function": "proceed_with_joke",
               "system_metrics": {}
             },
@@ -124,14 +124,14 @@
                 "response_format": {
                   "type": "text"
                 },
-                "topic": "Sundays",
+                "topic": "Books",
                 "_inputs_to_escape": [
                   "topic"
                 ]
               },
-              "output": "Why did the scarecrow become a motivational speaker on Sundays?\n\nBecause he was outstanding in his field all week and needed a day to inspire others!",
-              "start_time": 1726109904.816113,
-              "end_time": 1726109905.497242,
+              "output": "Sure, here's one for you:\n\nWhy did the scarecrow become a successful book reviewer?\n\nBecause he was outstanding in his field and knew how to pick out the good cornstories!",
+              "start_time": 1726174668.54009,
+              "end_time": 1726174669.438095,
               "error": null,
               "children": [
                 {
@@ -146,7 +146,7 @@
                       },
                       {
                         "role": "user",
-                        "content": "A joke about Sundays please"
+                        "content": "A joke about Books please"
                       }
                     ],
                     "temperature": 1.0,
@@ -162,14 +162,14 @@
                     }
                   },
                   "output": {
-                    "id": "chatcmpl-A6Qa26uBJ4ELvr9k0W2HieHMJr6Uq",
+                    "id": "chatcmpl-A6hQcA7adxPuAHXxqXwgdTtcxywTP",
                     "choices": [
                       {
                         "finish_reason": "stop",
                         "index": 0,
                         "logprobs": null,
                         "message": {
-                          "content": "Why did the scarecrow become a motivational speaker on Sundays?\n\nBecause he was outstanding in his field all week and needed a day to inspire others!",
+                          "content": "Sure, here's one for you:\n\nWhy did the scarecrow become a successful book reviewer?\n\nBecause he was outstanding in his field and knew how to pick out the good cornstories!",
                           "role": "assistant",
                           "function_call": null,
                           "tool_calls": null
@@ -194,15 +194,15 @@
                         }
                       }
                     ],
-                    "created": 1726095506,
+                    "created": 1726160270,
                     "model": "gpt-4o-2024-05-13",
                     "object": "chat.completion",
                     "service_tier": null,
                     "system_fingerprint": "fp_80a1bad4c7",
                     "usage": {
-                      "completion_tokens": 29,
+                      "completion_tokens": 37,
                       "prompt_tokens": 24,
-                      "total_tokens": 53
+                      "total_tokens": 61
                     },
                     "prompt_filter_results": [
                       {
@@ -211,10 +211,6 @@
                           "hate": {
                             "filtered": false,
                             "severity": "safe"
-                          },
-                          "jailbreak": {
-                            "filtered": false,
-                            "detected": false
                           },
                           "self_harm": {
                             "filtered": false,
@@ -232,60 +228,60 @@
                       }
                     ]
                   },
-                  "start_time": 1726109904.820113,
-                  "end_time": 1726109905.496243,
+                  "start_time": 1726174668.545646,
+                  "end_time": 1726174669.437092,
                   "error": null,
                   "children": [],
                   "node_name": null,
-                  "parent_id": "6de024de-e220-468b-b587-7280d03416d4",
-                  "id": "409bd603-ff6e-409f-99fc-01f2b017b4f8",
+                  "parent_id": "3e12aa40-617a-4964-9b52-a7d3e882c745",
+                  "id": "596f9572-8636-4f19-8859-458849af37be",
                   "function": "openai.resources.chat.completions.Completions.create",
                   "system_metrics": {
-                    "completion_tokens": 29,
+                    "completion_tokens": 37,
                     "prompt_tokens": 24,
-                    "total_tokens": 53
+                    "total_tokens": 61
                   }
                 }
               ],
               "node_name": "joke",
               "parent_id": "",
-              "id": "6de024de-e220-468b-b587-7280d03416d4",
+              "id": "3e12aa40-617a-4964-9b52-a7d3e882c745",
               "function": "AzureOpenAI.chat",
               "system_metrics": {
-                "completion_tokens": 29,
+                "completion_tokens": 37,
                 "prompt_tokens": 24,
-                "total_tokens": 53
+                "total_tokens": 61
               }
             },
             {
               "name": "echo",
               "type": "Function",
               "inputs": {
-                "input": "Why did the scarecrow become a motivational speaker on Sundays?\n\nBecause he was outstanding in his field all week and needed a day to inspire others!"
+                "input": "Sure, here's one for you:\n\nWhy did the scarecrow become a successful book reviewer?\n\nBecause he was outstanding in his field and knew how to pick out the good cornstories!"
               },
-              "output": "Why did the scarecrow become a motivational speaker on Sundays?\n\nBecause he was outstanding in his field all week and needed a day to inspire others!",
-              "start_time": 1726109905.499757,
-              "end_time": 1726109905.499757,
+              "output": "Sure, here's one for you:\n\nWhy did the scarecrow become a successful book reviewer?\n\nBecause he was outstanding in his field and knew how to pick out the good cornstories!",
+              "start_time": 1726174669.446612,
+              "end_time": 1726174669.447636,
               "error": null,
               "children": [],
               "node_name": "echo",
               "parent_id": "",
-              "id": "a737f692-627c-428b-b75f-97cd307b62e8",
+              "id": "6a47af76-2796-4669-87a8-dc21f9e61d1b",
               "function": "echo",
               "system_metrics": {}
             }
           ],
           "system_metrics": {
-            "duration": 1.1326,
+            "duration": 1.185378,
             "prompt_tokens": 24,
-            "completion_tokens": 29,
-            "total_tokens": 53
+            "completion_tokens": 37,
+            "total_tokens": 61
           },
           "inputs": {
-            "topic": "Sundays"
+            "topic": "Books"
           },
           "output": {
-            "joke": "Why did the scarecrow become a motivational speaker on Sundays?\n\nBecause he was outstanding in his field all week and needed a day to inspire others!"
+            "joke": "Sure, here's one for you:\n\nWhy did the scarecrow become a successful book reviewer?\n\nBecause he was outstanding in his field and knew how to pick out the good cornstories!"
           },
           "error": null
         }
@@ -294,31 +290,31 @@
       "description": "",
       "tags": null,
       "system_metrics": {
-        "duration": 1.1326,
+        "duration": 1.185378,
         "prompt_tokens": 24,
-        "completion_tokens": 29,
-        "total_tokens": 53
+        "completion_tokens": 37,
+        "total_tokens": 61
       },
       "result": {
-        "joke": "Why did the scarecrow become a motivational speaker on Sundays?\n\nBecause he was outstanding in his field all week and needed a day to inspire others!"
+        "joke": "Sure, here's one for you:\n\nWhy did the scarecrow become a successful book reviewer?\n\nBecause he was outstanding in his field and knew how to pick out the good cornstories!"
       },
       "upload_metrics": false,
-      "otel_trace_id": "0x43997a5a72a6ca3763127e387d8071d4",
+      "otel_trace_id": "0x8a3abdb76d33ce76e7a94d9a9b34363b",
       "message_format": "basic"
     }
   ],
   "node_runs": [
     {
       "node": "safety",
-      "flow_run_id": "7336b104-32cb-40a6-bd1a-370cceb000b9",
-      "run_id": "7336b104-32cb-40a6-bd1a-370cceb000b9_safety_0",
+      "flow_run_id": "218c86fc-03d3-4893-bf6f-2399744b2ce0",
+      "run_id": "218c86fc-03d3-4893-bf6f-2399744b2ce0_safety_0",
       "status": "Completed",
       "inputs": {
         "connection": "csllmopsworkshopdev",
         "hate_category": "medium_sensitivity",
         "self_harm_category": "medium_sensitivity",
         "sexual_category": "medium_sensitivity",
-        "text": "Sundays",
+        "text": "Books",
         "violence_category": "medium_sensitivity"
       },
       "output": {
@@ -332,9 +328,9 @@
       },
       "metrics": null,
       "error": null,
-      "parent_run_id": "7336b104-32cb-40a6-bd1a-370cceb000b9_0",
-      "start_time": "2024-09-11T22:58:24.373166Z",
-      "end_time": "2024-09-11T22:58:24.812128Z",
+      "parent_run_id": "218c86fc-03d3-4893-bf6f-2399744b2ce0_0",
+      "start_time": "2024-09-12T16:57:48.266987Z",
+      "end_time": "2024-09-12T16:57:48.532568Z",
       "index": 0,
       "api_calls": [
         {
@@ -345,7 +341,7 @@
             "hate_category": "medium_sensitivity",
             "self_harm_category": "medium_sensitivity",
             "sexual_category": "medium_sensitivity",
-            "text": "Sundays",
+            "text": "Books",
             "violence_category": "medium_sensitivity"
           },
           "output": {
@@ -357,15 +353,15 @@
               "Violence": "Accept"
             }
           },
-          "start_time": 1726109904.374172,
-          "end_time": 1726109904.811114,
+          "start_time": 1726174668.266987,
+          "end_time": 1726174668.531573,
           "error": null,
           "children": [
             {
               "name": "AzureContentSafety.analyze_text",
               "type": "Function",
               "inputs": {
-                "text": "Sundays",
+                "text": "Books",
                 "hate_category": "medium_sensitivity",
                 "sexual_category": "medium_sensitivity",
                 "self_harm_category": "medium_sensitivity",
@@ -380,20 +376,20 @@
                   "Violence": "Accept"
                 }
               },
-              "start_time": 1726109904.375171,
-              "end_time": 1726109904.811114,
+              "start_time": 1726174668.266987,
+              "end_time": 1726174668.530542,
               "error": null,
               "children": [],
               "node_name": null,
-              "parent_id": "e27442b2-ce07-460c-a341-62ee7a1f3cae",
-              "id": "48a97be5-9e2c-414f-b6d7-58b0d7336913",
+              "parent_id": "364314d5-1d03-40f1-91de-12fe288c867d",
+              "id": "01954f31-6205-48d3-98f9-2097ac6df956",
               "function": "AzureContentSafety.analyze_text",
               "system_metrics": {}
             }
           ],
           "node_name": "safety",
           "parent_id": "",
-          "id": "e27442b2-ce07-460c-a341-62ee7a1f3cae",
+          "id": "364314d5-1d03-40f1-91de-12fe288c867d",
           "function": "analyze_text",
           "system_metrics": {}
         }
@@ -401,11 +397,11 @@
       "cached_run_id": null,
       "cached_flow_run_id": null,
       "logs": {
-        "stdout": "[2024-09-11T22:58:24+0000] status code: 200\n[2024-09-11T22:58:24+0000] response txt: {\"blocklistsMatch\":[],\"categoriesAnalysis\":[{\"category\":\"Hate\",\"severity\":0},{\"category\":\"SelfHarm\",\"severity\":0},{\"category\":\"Sexual\",\"severity\":0},{\"category\":\"Violence\",\"severity\":0}]}\n[2024-09-11T22:58:24+0000] Action result: {<Category.Hate: 1>: <Action.Accept: 'Accept'>, <Category.SelfHarm: 2>: <Action.Accept: 'Accept'>, <Category.Sexual: 3>: <Action.Accept: 'Accept'>, <Category.Violence: 4>: <Action.Accept: 'Accept'>}\n",
+        "stdout": "[2024-09-12T16:57:48+0000] status code: 200\n[2024-09-12T16:57:48+0000] response txt: {\"blocklistsMatch\":[],\"categoriesAnalysis\":[{\"category\":\"Hate\",\"severity\":0},{\"category\":\"SelfHarm\",\"severity\":0},{\"category\":\"Sexual\",\"severity\":0},{\"category\":\"Violence\",\"severity\":0}]}\n[2024-09-12T16:57:48+0000] Action result: {<Category.Hate: 1>: <Action.Accept: 'Accept'>, <Category.SelfHarm: 2>: <Action.Accept: 'Accept'>, <Category.Sexual: 3>: <Action.Accept: 'Accept'>, <Category.Violence: 4>: <Action.Accept: 'Accept'>}\n",
         "stderr": ""
       },
       "system_metrics": {
-        "duration": 0.438962
+        "duration": 0.265581
       },
       "result": {
         "suggested_action": "Accept",
@@ -420,8 +416,8 @@
     },
     {
       "node": "suggestedAction",
-      "flow_run_id": "7336b104-32cb-40a6-bd1a-370cceb000b9",
-      "run_id": "7336b104-32cb-40a6-bd1a-370cceb000b9_suggestedAction_0",
+      "flow_run_id": "218c86fc-03d3-4893-bf6f-2399744b2ce0",
+      "run_id": "218c86fc-03d3-4893-bf6f-2399744b2ce0_suggestedAction_0",
       "status": "Completed",
       "inputs": {
         "input1": {
@@ -437,9 +433,9 @@
       "output": "Accept",
       "metrics": null,
       "error": null,
-      "parent_run_id": "7336b104-32cb-40a6-bd1a-370cceb000b9_0",
-      "start_time": "2024-09-11T22:58:24.813112Z",
-      "end_time": "2024-09-11T22:58:24.814111Z",
+      "parent_run_id": "218c86fc-03d3-4893-bf6f-2399744b2ce0_0",
+      "start_time": "2024-09-12T16:57:48.535074Z",
+      "end_time": "2024-09-12T16:57:48.537092Z",
       "index": 0,
       "api_calls": [
         {
@@ -457,13 +453,13 @@
             }
           },
           "output": "Accept",
-          "start_time": 1726109904.813112,
-          "end_time": 1726109904.814111,
+          "start_time": 1726174668.535074,
+          "end_time": 1726174668.536091,
           "error": null,
           "children": [],
           "node_name": "suggestedAction",
           "parent_id": "",
-          "id": "323925ab-76bd-4b96-a69e-55cb9551c17d",
+          "id": "7d5b5e4a-2acd-43bf-9a67-e884d89e2a18",
           "function": "proceed_with_joke",
           "system_metrics": {}
         }
@@ -475,15 +471,15 @@
         "stderr": ""
       },
       "system_metrics": {
-        "duration": 0.000999
+        "duration": 0.002018
       },
       "result": "Accept",
       "message_format": "basic"
     },
     {
       "node": "joke",
-      "flow_run_id": "7336b104-32cb-40a6-bd1a-370cceb000b9",
-      "run_id": "7336b104-32cb-40a6-bd1a-370cceb000b9_joke_0",
+      "flow_run_id": "218c86fc-03d3-4893-bf6f-2399744b2ce0",
+      "run_id": "218c86fc-03d3-4893-bf6f-2399744b2ce0_joke_0",
       "status": "Completed",
       "inputs": {
         "deployment_name": "gpt-4",
@@ -493,17 +489,17 @@
         "response_format": {
           "type": "text"
         },
-        "topic": "Sundays",
+        "topic": "Books",
         "_inputs_to_escape": [
           "topic"
         ]
       },
-      "output": "Why did the scarecrow become a motivational speaker on Sundays?\n\nBecause he was outstanding in his field all week and needed a day to inspire others!",
+      "output": "Sure, here's one for you:\n\nWhy did the scarecrow become a successful book reviewer?\n\nBecause he was outstanding in his field and knew how to pick out the good cornstories!",
       "metrics": null,
       "error": null,
-      "parent_run_id": "7336b104-32cb-40a6-bd1a-370cceb000b9_0",
-      "start_time": "2024-09-11T22:58:24.815111Z",
-      "end_time": "2024-09-11T22:58:25.498242Z",
+      "parent_run_id": "218c86fc-03d3-4893-bf6f-2399744b2ce0_0",
+      "start_time": "2024-09-12T16:57:48.540090Z",
+      "end_time": "2024-09-12T16:57:49.441641Z",
       "index": 0,
       "api_calls": [
         {
@@ -518,14 +514,14 @@
             "response_format": {
               "type": "text"
             },
-            "topic": "Sundays",
+            "topic": "Books",
             "_inputs_to_escape": [
               "topic"
             ]
           },
-          "output": "Why did the scarecrow become a motivational speaker on Sundays?\n\nBecause he was outstanding in his field all week and needed a day to inspire others!",
-          "start_time": 1726109904.816113,
-          "end_time": 1726109905.497242,
+          "output": "Sure, here's one for you:\n\nWhy did the scarecrow become a successful book reviewer?\n\nBecause he was outstanding in his field and knew how to pick out the good cornstories!",
+          "start_time": 1726174668.54009,
+          "end_time": 1726174669.438095,
           "error": null,
           "children": [
             {
@@ -540,7 +536,7 @@
                   },
                   {
                     "role": "user",
-                    "content": "A joke about Sundays please"
+                    "content": "A joke about Books please"
                   }
                 ],
                 "temperature": 1.0,
@@ -556,14 +552,14 @@
                 }
               },
               "output": {
-                "id": "chatcmpl-A6Qa26uBJ4ELvr9k0W2HieHMJr6Uq",
+                "id": "chatcmpl-A6hQcA7adxPuAHXxqXwgdTtcxywTP",
                 "choices": [
                   {
                     "finish_reason": "stop",
                     "index": 0,
                     "logprobs": null,
                     "message": {
-                      "content": "Why did the scarecrow become a motivational speaker on Sundays?\n\nBecause he was outstanding in his field all week and needed a day to inspire others!",
+                      "content": "Sure, here's one for you:\n\nWhy did the scarecrow become a successful book reviewer?\n\nBecause he was outstanding in his field and knew how to pick out the good cornstories!",
                       "role": "assistant",
                       "function_call": null,
                       "tool_calls": null
@@ -588,15 +584,15 @@
                     }
                   }
                 ],
-                "created": 1726095506,
+                "created": 1726160270,
                 "model": "gpt-4o-2024-05-13",
                 "object": "chat.completion",
                 "service_tier": null,
                 "system_fingerprint": "fp_80a1bad4c7",
                 "usage": {
-                  "completion_tokens": 29,
+                  "completion_tokens": 37,
                   "prompt_tokens": 24,
-                  "total_tokens": 53
+                  "total_tokens": 61
                 },
                 "prompt_filter_results": [
                   {
@@ -605,10 +601,6 @@
                       "hate": {
                         "filtered": false,
                         "severity": "safe"
-                      },
-                      "jailbreak": {
-                        "filtered": false,
-                        "detected": false
                       },
                       "self_harm": {
                         "filtered": false,
@@ -626,29 +618,29 @@
                   }
                 ]
               },
-              "start_time": 1726109904.820113,
-              "end_time": 1726109905.496243,
+              "start_time": 1726174668.545646,
+              "end_time": 1726174669.437092,
               "error": null,
               "children": [],
               "node_name": null,
-              "parent_id": "6de024de-e220-468b-b587-7280d03416d4",
-              "id": "409bd603-ff6e-409f-99fc-01f2b017b4f8",
+              "parent_id": "3e12aa40-617a-4964-9b52-a7d3e882c745",
+              "id": "596f9572-8636-4f19-8859-458849af37be",
               "function": "openai.resources.chat.completions.Completions.create",
               "system_metrics": {
-                "completion_tokens": 29,
+                "completion_tokens": 37,
                 "prompt_tokens": 24,
-                "total_tokens": 53
+                "total_tokens": 61
               }
             }
           ],
           "node_name": "joke",
           "parent_id": "",
-          "id": "6de024de-e220-468b-b587-7280d03416d4",
+          "id": "3e12aa40-617a-4964-9b52-a7d3e882c745",
           "function": "AzureOpenAI.chat",
           "system_metrics": {
-            "completion_tokens": 29,
+            "completion_tokens": 37,
             "prompt_tokens": 24,
-            "total_tokens": 53
+            "total_tokens": 61
           }
         }
       ],
@@ -659,44 +651,44 @@
         "stderr": ""
       },
       "system_metrics": {
-        "completion_tokens": 29,
+        "completion_tokens": 37,
         "prompt_tokens": 24,
-        "total_tokens": 53,
-        "duration": 0.683131
+        "total_tokens": 61,
+        "duration": 0.901551
       },
-      "result": "Why did the scarecrow become a motivational speaker on Sundays?\n\nBecause he was outstanding in his field all week and needed a day to inspire others!",
+      "result": "Sure, here's one for you:\n\nWhy did the scarecrow become a successful book reviewer?\n\nBecause he was outstanding in his field and knew how to pick out the good cornstories!",
       "message_format": "basic"
     },
     {
       "node": "echo",
-      "flow_run_id": "7336b104-32cb-40a6-bd1a-370cceb000b9",
-      "run_id": "7336b104-32cb-40a6-bd1a-370cceb000b9_echo_0",
+      "flow_run_id": "218c86fc-03d3-4893-bf6f-2399744b2ce0",
+      "run_id": "218c86fc-03d3-4893-bf6f-2399744b2ce0_echo_0",
       "status": "Completed",
       "inputs": {
-        "input": "Why did the scarecrow become a motivational speaker on Sundays?\n\nBecause he was outstanding in his field all week and needed a day to inspire others!"
+        "input": "Sure, here's one for you:\n\nWhy did the scarecrow become a successful book reviewer?\n\nBecause he was outstanding in his field and knew how to pick out the good cornstories!"
       },
-      "output": "Why did the scarecrow become a motivational speaker on Sundays?\n\nBecause he was outstanding in his field all week and needed a day to inspire others!",
+      "output": "Sure, here's one for you:\n\nWhy did the scarecrow become a successful book reviewer?\n\nBecause he was outstanding in his field and knew how to pick out the good cornstories!",
       "metrics": null,
       "error": null,
-      "parent_run_id": "7336b104-32cb-40a6-bd1a-370cceb000b9_0",
-      "start_time": "2024-09-11T22:58:25.499757Z",
-      "end_time": "2024-09-11T22:58:25.500767Z",
+      "parent_run_id": "218c86fc-03d3-4893-bf6f-2399744b2ce0_0",
+      "start_time": "2024-09-12T16:57:49.446612Z",
+      "end_time": "2024-09-12T16:57:49.447636Z",
       "index": 0,
       "api_calls": [
         {
           "name": "echo",
           "type": "Function",
           "inputs": {
-            "input": "Why did the scarecrow become a motivational speaker on Sundays?\n\nBecause he was outstanding in his field all week and needed a day to inspire others!"
+            "input": "Sure, here's one for you:\n\nWhy did the scarecrow become a successful book reviewer?\n\nBecause he was outstanding in his field and knew how to pick out the good cornstories!"
           },
-          "output": "Why did the scarecrow become a motivational speaker on Sundays?\n\nBecause he was outstanding in his field all week and needed a day to inspire others!",
-          "start_time": 1726109905.499757,
-          "end_time": 1726109905.499757,
+          "output": "Sure, here's one for you:\n\nWhy did the scarecrow become a successful book reviewer?\n\nBecause he was outstanding in his field and knew how to pick out the good cornstories!",
+          "start_time": 1726174669.446612,
+          "end_time": 1726174669.447636,
           "error": null,
           "children": [],
           "node_name": "echo",
           "parent_id": "",
-          "id": "a737f692-627c-428b-b75f-97cd307b62e8",
+          "id": "6a47af76-2796-4669-87a8-dc21f9e61d1b",
           "function": "echo",
           "system_metrics": {}
         }
@@ -708,9 +700,9 @@
         "stderr": ""
       },
       "system_metrics": {
-        "duration": 0.00101
+        "duration": 0.001024
       },
-      "result": "Why did the scarecrow become a motivational speaker on Sundays?\n\nBecause he was outstanding in his field all week and needed a day to inspire others!",
+      "result": "Sure, here's one for you:\n\nWhy did the scarecrow become a successful book reviewer?\n\nBecause he was outstanding in his field and knew how to pick out the good cornstories!",
       "message_format": "basic"
     }
   ]

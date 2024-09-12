@@ -1,14 +1,14 @@
-2024-09-11 18:58:24 -0400   42260 execution.flow     INFO     Start executing nodes in thread pool mode.
-2024-09-11 18:58:24 -0400   42260 execution.flow     INFO     Start to run 4 nodes with concurrency level 16.
-2024-09-11 18:58:24 -0400   42260 execution.flow     INFO     Executing node safety. node run id: 7336b104-32cb-40a6-bd1a-370cceb000b9_safety_0
-2024-09-11 18:58:24 -0400   42260 execution.flow     INFO     [safety in line 0 (index starts from 0)] stdout> status code: 200
-2024-09-11 18:58:24 -0400   42260 execution.flow     INFO     [safety in line 0 (index starts from 0)] stdout> response txt: {"blocklistsMatch":[],"categoriesAnalysis":[{"category":"Hate","severity":0},{"category":"SelfHarm","severity":0},{"category":"Sexual","severity":0},{"category":"Violence","severity":0}]}
-2024-09-11 18:58:24 -0400   42260 execution.flow     INFO     [safety in line 0 (index starts from 0)] stdout> Action result: {<Category.Hate: 1>: <Action.Accept: 'Accept'>, <Category.SelfHarm: 2>: <Action.Accept: 'Accept'>, <Category.Sexual: 3>: <Action.Accept: 'Accept'>, <Category.Violence: 4>: <Action.Accept: 'Accept'>}
-2024-09-11 18:58:24 -0400   42260 execution.flow     INFO     Node safety completes.
-2024-09-11 18:58:24 -0400   42260 execution.flow     INFO     Executing node suggestedAction. node run id: 7336b104-32cb-40a6-bd1a-370cceb000b9_suggestedAction_0
-2024-09-11 18:58:24 -0400   42260 execution.flow     INFO     Node suggestedAction completes.
-2024-09-11 18:58:24 -0400   42260 execution.flow     INFO     The node 'joke' will be executed because the activate condition is met, i.e. '${suggestedAction.output}' is equal to 'Accept'.
-2024-09-11 18:58:24 -0400   42260 execution.flow     INFO     Executing node joke. node run id: 7336b104-32cb-40a6-bd1a-370cceb000b9_joke_0
-2024-09-11 18:58:25 -0400   42260 execution.flow     INFO     Node joke completes.
-2024-09-11 18:58:25 -0400   42260 execution.flow     INFO     Executing node echo. node run id: 7336b104-32cb-40a6-bd1a-370cceb000b9_echo_0
-2024-09-11 18:58:25 -0400   42260 execution.flow     INFO     Node echo completes.
+2024-09-12 12:57:48 -0400   35972 execution.flow     INFO     Start executing nodes in thread pool mode.
+2024-09-12 12:57:48 -0400   35972 execution.flow     INFO     Start to run 4 nodes with concurrency level 16.
+2024-09-12 12:57:48 -0400   35972 execution.flow     INFO     Executing node safety. node run id: 218c86fc-03d3-4893-bf6f-2399744b2ce0_safety_0
+2024-09-12 12:57:48 -0400   35972 execution.flow     INFO     [safety in line 0 (index starts from 0)] stdout> status code: 200
+2024-09-12 12:57:48 -0400   35972 execution.flow     INFO     [safety in line 0 (index starts from 0)] stdout> response txt: {"blocklistsMatch":[],"categoriesAnalysis":[{"category":"Hate","severity":0},{"category":"SelfHarm","severity":0},{"category":"Sexual","severity":0},{"category":"Violence","severity":0}]}
+2024-09-12 12:57:48 -0400   35972 execution.flow     INFO     [safety in line 0 (index starts from 0)] stdout> Action result: {<Category.Hate: 1>: <Action.Accept: 'Accept'>, <Category.SelfHarm: 2>: <Action.Accept: 'Accept'>, <Category.Sexual: 3>: <Action.Accept: 'Accept'>, <Category.Violence: 4>: <Action.Accept: 'Accept'>}
+2024-09-12 12:57:48 -0400   35972 execution.flow     INFO     Node safety completes.
+2024-09-12 12:57:48 -0400   35972 execution.flow     INFO     Executing node suggestedAction. node run id: 218c86fc-03d3-4893-bf6f-2399744b2ce0_suggestedAction_0
+2024-09-12 12:57:48 -0400   35972 execution.flow     INFO     Node suggestedAction completes.
+2024-09-12 12:57:48 -0400   35972 execution.flow     INFO     The node 'joke' will be executed because the activate condition is met, i.e. '${suggestedAction.output}' is equal to 'Accept'.
+2024-09-12 12:57:48 -0400   35972 execution.flow     INFO     Executing node joke. node run id: 218c86fc-03d3-4893-bf6f-2399744b2ce0_joke_0
+2024-09-12 12:57:49 -0400   35972 execution.flow     INFO     Node joke completes.
+2024-09-12 12:57:49 -0400   35972 execution.flow     INFO     Executing node echo. node run id: 218c86fc-03d3-4893-bf6f-2399744b2ce0_echo_0
+2024-09-12 12:57:49 -0400   35972 execution.flow     INFO     Node echo completes.

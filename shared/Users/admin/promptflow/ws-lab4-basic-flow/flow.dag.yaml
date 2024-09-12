@@ -6,7 +6,7 @@ inputs:
   topic:
     type: string
     is_chat_input: false
-    default: Sundays
+    default: Books
 outputs:
   joke:
     type: string
